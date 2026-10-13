@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gaming Console Hub - a catalog of handheld gaming consoles, games, accessories and controllers.">
+  <title>Gaming Console Hub</title>
+  <link rel="icon" type="image/png" href="https://img.icons8.com/external-itim2101-lineal-color-itim2101/64/external-game-console-game-controller-itim2101-lineal-color-itim2101-9.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#products">Skip to products</a>
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="Gaming Console Hub home">
+        <span class="brand-icon" aria-hidden="true">&#127918;</span>
+        <span class="brand-text">Gaming Console Hub</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Handheld gaming catalog</p>
+        <h1>Play anywhere with <span class="accent">Gaming Console Hub</span></h1>
+        <p class="hero-text">
+          Browse handheld consoles, games, accessories and controllers, with compatibility
+          notes for each product so you know what works with your device.
+        </p>
+        <a href="#products" class="btn btn-primary btn-large">Browse Products <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section id="products" class="products-section">
+      <div class="container">
+        <h2>Products</h2>
+        <p class="section-note">
+          Prices are <strong>estimated prices in Philippine pesos</strong> and may differ from current retail prices.
+          Always check compatibility with the manufacturer before buying.
+        </p>
+
+        <aside id="catalogInfo" class="info-panel" aria-live="polite" aria-labelledby="catalogInfoTitle">
+          <h3 id="catalogInfoTitle">Catalog Notes</h3>
+          <div id="catalogInfoBody" class="info-body">Loading catalog notes&hellip;</div>
+        </aside>
+
+        <div class="toolbar">
+          <div class="filters" role="group" aria-label="Filter products by category">
+            <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Products</button>
+            <button type="button" class="filter-btn" data-filter="consoles" aria-pressed="false">Handheld Consoles</button>
+            <button type="button" class="filter-btn" data-filter="games" aria-pressed="false">Console Games</button>
+            <button type="button" class="filter-btn" data-filter="accessories-controllers" aria-pressed="false">Accessories &amp; Controllers</button>
+          </div>
+
+          <div class="search-sort">
+            <div class="field-inline">
+              <label for="searchInput">Search by name or brand</label>
+              <input type="search" id="searchInput" placeholder="e.g. Steam Deck, Nintendo, Hades" autocomplete="off">
+            </div>
+            <div class="field-inline">
+              <label for="sortSelect">Sort by</label>
+              <select id="sortSelect">
+                <option value="default">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <p id="searchHint" class="search-hint" role="status" hidden>Type at least 3 characters to search.</p>
+
+        <p id="productCount" class="product-count" aria-live="polite"></p>
+
+        <div id="productGrid" class="product-grid"></div>
+        <p id="emptyState" class="empty-state" hidden>
+          No products found.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container contact-inner">
+        <h2>Contact Us</h2>
+        <p class="section-note">Questions about compatibility? Send us a message.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required minlength="2" maxlength="60"
+                   pattern="[\p{L}\p{M}' ’\-]+" title="Letters, spaces, hyphens, and apostrophes only"
+                   autocomplete="name" autocapitalize="words" spellcheck="false">
+            <span class="field-error" id="nameError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+            <span class="field-error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help?" required minlength="10"></textarea>
+            <span class="field-error" id="messageError"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Gaming Console Hub.</p>
+      <p class="disclaimer">
+        Product names and trademarks belong to their respective owners.
+        <br>Prices are estimates and may vary.
+      </p>
+    </div>
+  </footer>
+
+  <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
